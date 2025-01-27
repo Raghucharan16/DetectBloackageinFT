@@ -4,6 +4,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras import layers, models
 import tensorflow_hub as hub
+from data_preparation import TubeBlockageDataPreparator
 
 # 1. Data Processing Utilities
 class VideoDataProcessor:
