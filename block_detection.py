@@ -12,7 +12,7 @@ class VideoDataProcessor:
     Handles video data preprocessing for both I3D and SlowFast networks.
     Includes frame extraction, resizing, and normalization.
     """
-    def __init__(self, frame_height=224, frame_width=224, num_frames=64):
+    def __init__(self, frame_height=224, frame_width=224, num_frames=30):
         self.frame_height = frame_height
         self.frame_width = frame_width
         self.num_frames = num_frames
@@ -237,13 +237,13 @@ def main():
     
     # Train I3D Model
     i3d_model = I3DModel(num_classes=2)
-    i3d_trainer = ModelTrainer(i3d_model, learning_rate=1e-4)
+    i3d_trainer = ModelTrainer(i3d_model, learning_rate=1e-5)
     i3d_trainer.configure_training()
     i3d_history = i3d_trainer.train(train_dataset, val_dataset)
     
     # Train SlowFast Model
     slowfast_model = SlowFastModel(num_classes=2)
-    slowfast_trainer = ModelTrainer(slowfast_model, learning_rate=1e-4)
+    slowfast_trainer = ModelTrainer(slowfast_model, learning_rate=1e-5)
     slowfast_trainer.configure_training()
     slowfast_history = slowfast_trainer.train(train_dataset, val_dataset)
 
