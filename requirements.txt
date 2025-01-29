@@ -1,0 +1,7 @@
+streamlit==1.22.0
+torch==2.0.1
+torchvision==0.15.2
+pytorchvideo==0.1.5
+opencv-python-headless==4.7.0.72
+numpy==1.24.3
+tensorrt==8.6.1
